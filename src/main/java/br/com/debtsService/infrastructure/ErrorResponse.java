@@ -15,33 +15,22 @@ public class ErrorResponse {
 	private final String objectName;
 	private final List<ErrorObject> errors;
 	
-	public ErrorResponse(String message, int code, String status, String objectName, List<ErrorObject> errors) {
-		super();
-		this.message = message;
-		this.code = code;
-		this.status = status;
-		this.objectName = objectName;
-		this.errors = errors;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public int getCode() {
-		return code;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public String getObjectName() {
-		return objectName;
-	}
-
-	public List<ErrorObject> getErrors() {
-		return errors;
-	}
+	
+	  public ErrorResponse(final String message, final int code, final String status, final String
+	  objectName, final List<ErrorObject> errors) { super(); this.message = message;
+	  this.code = code; this.status = status; this.objectName = objectName;
+	  this.errors = errors; }
+	  
+	
+	  public String getMessage() { return message; }
+	  
+	  public int getCode() { return code; }
+	  
+	  public String getStatus() { return status; }
+	  
+	  public String getObjectName() { return objectName; }
+	  
+	  public List<ErrorObject> getErrors() { return errors; }
+	 
 
 }
