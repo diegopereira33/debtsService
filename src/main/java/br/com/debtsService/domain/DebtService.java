@@ -18,7 +18,7 @@ public class DebtService {
 	}
 	
 	public List<Debt> findAll() { 
-		return repository.findAllByOrderByNameAsc(); 	
+		return repository.findAll(); 	
 	}
 	
 	public Optional<Debt> findById(Long id) {
@@ -31,15 +31,14 @@ public class DebtService {
 	
 	public ResponseEntity<Debt> update (Long id, Debt debt) {
 		return repository.findById(id).map(record -> {
-			record.setAllValue(debt.getAllValue());
+			record.setValue(debt.getValue());
 			record.setCategory(debt.getCategory());
-			record.setDate(debt.getDate());
+			record.setPayDate(debt.getPayDate());
 			record.setDescription(debt.getDescription());
 			record.setDueDate(debt.getDueDate());
-			record.setInstallmentValue(debt.getInstallmentValue());
 			record.setName(debt.getName());
-			record.setNote(debt.getNote());
 			record.setStatus(debt.getStatus());
+			record.setParcelNumber(debt.getParcelNumber());
 			Debt newDebt = repository.save(record);
 			return ResponseEntity.ok().body(newDebt);
 		}).orElse(ResponseEntity.notFound().build());

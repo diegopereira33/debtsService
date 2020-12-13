@@ -18,24 +18,32 @@ public class Debt {
 	@NotEmpty
 	@NotNull(message = "{name.not.null}")
 	private String name; 
-	private String description;
 	@NotEmpty
 	@NotNull(message = "{dueDate.not.null}")
 	private String dueDate; 
 	@NotEmpty
-	@NotNull(message = "{date.not.null}")
-	private String date;
-	private String note;
-	@NotEmpty
 	@NotNull(message = "{status.not.null}")
 	private String status;
+	@NotNull(message = "{value.not.null}")
+	private float value; 
+	private String description;
+	private String payDate;
 	private String category; 
-	
-	@NotNull(message = "{allValue.not.null}")
-	private int allValue; 
-	private int installmentValue;
+	private int parcelNumber;
 	
 	
+	public float getValue() {
+		return value;
+	}
+	public void setValue(float value) {
+		this.value = value;
+	}
+	public String getPayDate() {
+		return payDate;
+	}
+	public void setPayDate(String payDate) {
+		this.payDate = payDate;
+	}
 	public String getName() {
 		return name;
 	}
@@ -54,18 +62,7 @@ public class Debt {
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public String getNote() {
-		return note;
-	}
-	public void setNote(String note) {
-		this.note = note;
-	}
+	
 	public String getStatus() {
 		return status;
 	}
@@ -84,20 +81,11 @@ public class Debt {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getAllValue() {
-		return allValue;
+	public int getParcelNumber() {
+		return parcelNumber;
 	}
-	public void setAllValue(int allValue) {
-		this.allValue = allValue;
+	public void setParcelNumber(int parcelNumber) {
+		this.parcelNumber = parcelNumber;
 	}
-	public int getInstallmentValue() {
-		return installmentValue;
-	}
-	public void setInstallmentValue(int installmentValue) {
-		this.installmentValue = installmentValue;
-	}
-	
-	
-	
 	
 }

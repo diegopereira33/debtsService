@@ -6,5 +6,5 @@ import br.com.debtsService.domain.*;
 
 public interface DebtRepository extends CrudRepository<Debt, Long> {
 
-	List<Debt> findAllByOrderByNameAsc();
+	List<Debt> findAll();
 }
