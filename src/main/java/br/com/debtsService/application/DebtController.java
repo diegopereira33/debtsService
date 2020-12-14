@@ -42,6 +42,23 @@ public class DebtController {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Debt not found"));
 	}
 	
+	@GetMapping("/name/{name}")
+	public List<Debt> findByName(@PathVariable String name) {
+		return service.findByName(name);
+	}
+	
+	@GetMapping("/date/{initialDate}/{finalDate}")
+	public List<Debt> findByDate(@PathVariable String initialDate, @PathVariable String finalDate ) {
+		return service.findByDate(initialDate, finalDate);
+	}
+
+
+	@GetMapping("/category/{category}")
+	public List<Debt> findByCategory(@PathVariable String category) {
+		return service.findByCategory(category);
+	}
+
+	
 	@PostMapping
 	public Debt create(@RequestBody @Valid Debt debt) {
 		return service.create(debt);

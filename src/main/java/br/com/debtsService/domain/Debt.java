@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "debt")
 public class Debt {
 
 	@Id

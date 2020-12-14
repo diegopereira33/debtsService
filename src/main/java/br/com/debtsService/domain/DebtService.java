@@ -25,6 +25,18 @@ public class DebtService {
 		return repository.findById(id);
 	}
 	
+	public List<Debt> findByName(String name) {
+		return repository.findByName(name);
+	}
+	
+	public List<Debt> findByDate(String initialDate, String finalDate) {
+		return repository.findByDate(initialDate, finalDate);
+	}
+	
+	public List<Debt> findByCategory(String category) {
+		return repository.findByCategory(category);
+	}
+	
 	public Debt create(Debt debt) {
 		return repository.save(debt);
 	}
